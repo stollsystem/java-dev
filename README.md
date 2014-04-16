@@ -12,3 +12,10 @@ Desenvolvimento Java
 . Criei um novo projeto Maven;<br/>
 . Botão direito no projeto > Team > Share, e compartilhei com o repositório local;<br/>
 . A partir daí já posso fazer commits e pushs no projeto.
+
+<h4>Criando a base MySQL</h4>
+. Criei o diretório database no repositório com o script responsável em criar o schema, tabelas, índices e constraints;<br/>
+. Pelo Terminal, usei <i>git status</i> para verificar o arquivo em questão;<br/>
+. Adicionei este arquivo: git add database/*;<br/>
+. Fiz commit: git commit -m "comentários";<br/>
+. Fiz push: git push;<br/>
