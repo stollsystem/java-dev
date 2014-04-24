@@ -18,4 +18,9 @@ Desenvolvimento Java
 . Pelo Terminal, usei <i>git status</i> para verificar o arquivo em questão;<br/>
 . Adicionei este arquivo: git add database/*;<br/>
 . Fiz commit: git commit -m "comentários";<br/>
-. Fiz push: git push;<br/>
+. Fiz push: git push.<br/>
+
+<h4>Configurando o projeto com MySQL e Hibernate</h4>
+. Criei arquivo src/main/webapp/WEB-INF/web.xml;<br/>
+. Criei arquivo src/main/resources/META-INF/persistence.xml;<br/>
+. Adicionei dependências no pom.xml para o MySQL e para o Hibernate.
