@@ -20,7 +20,12 @@ Desenvolvimento Java
 . Fiz commit: git commit -m "comentários";<br/>
 . Fiz push: git push.<br/>
 
+<h4>Instalando o módulo mysql no JBoss</h4>
+. Em %JBOSS_HOME%/modules, copiei o arquivo com/mysql/main/mysql-connector-java-5.1.17-bin.jar;<br/>
+. Criei o arquivo module.xml no mesmo diretório;<br/>
+. No %JBOSS_HOME%/standalone/configuration/standalone.xml, configurei o driver e o datasource.<br/>
+
 <h4>Configurando o projeto com MySQL e Hibernate</h4>
 . Criei arquivo src/main/webapp/WEB-INF/web.xml;<br/>
 . Criei arquivo src/main/resources/META-INF/persistence.xml;<br/>
-. Adicionei dependências no pom.xml para o MySQL e para o Hibernate.
+. Adicionei dependências no pom.xml para o MySQL e para o Hibernate.<br/>
