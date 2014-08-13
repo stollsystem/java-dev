@@ -29,3 +29,8 @@ Desenvolvimento Java
 . Criei arquivo src/main/webapp/WEB-INF/web.xml;<br/>
 . Criei arquivo src/main/resources/META-INF/persistence.xml;<br/>
 . Adicionei dependências no pom.xml para o MySQL e para o Hibernate.<br/>
+
+<h4>Estrutura Hibernate<h4>
+. Criei classe HibernateUtil;</br>
+. Criei Entidade Produto, DAO e ManagedBean;</br>
+. Configuração do JSF.</br>
