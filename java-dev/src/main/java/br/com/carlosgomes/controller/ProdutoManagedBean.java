@@ -21,7 +21,7 @@ public class ProdutoManagedBean {
 	}
 	
 	public String getDescricao() {
-		return "Produto A";
+		return new ProdutoDAO().buscaProduto(1).getDescricao();
 	}
 	
 }
