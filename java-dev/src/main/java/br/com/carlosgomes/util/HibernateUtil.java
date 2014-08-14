@@ -4,6 +4,8 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
+import org.hibernate.Session;
+
 public class HibernateUtil {
 	
 	private static EntityManager entityManager;
@@ -16,4 +18,7 @@ public class HibernateUtil {
 		return entityManager;
 	}
 
+	public static Session getSession() {
+		return (Session) getEntityManager().getDelegate();
+	}
 }
