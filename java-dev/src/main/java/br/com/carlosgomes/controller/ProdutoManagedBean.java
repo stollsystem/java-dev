@@ -9,19 +9,19 @@ import br.com.carlosgomes.modelo.Produto;
 @RequestScoped
 public class ProdutoManagedBean {
 	
-	public String incluiProduto() {
-		Produto p1 = new Produto();
-		p1.setDescricao("Produto A");
-		
-		new ProdutoDAO().salva(p1);
-
-		System.out.println("Produto incluído " + p1.getDescricao());
-		
-		return null;
-	}
-	
 	public String getDescricao() {
-		return new ProdutoDAO().buscaProduto(1).getDescricao();
+		return new ProdutoDAO().busca(20).getDescricao();
+	}
+
+	public void atualiza() {
+		ProdutoDAO produtoDAO = new ProdutoDAO();
+		produtoDAO.beginTransaction();
+
+		Produto produto = produtoDAO.busca(20);
+		produto.setDescricao("CCC");
+		
+		produtoDAO.salva(produto);
+		produtoDAO.commit();
 	}
 	
 }

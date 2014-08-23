@@ -8,8 +8,9 @@
 <h:body>
 	<f:view>
 		<h:form id="frm">
+			<h:outputText value="Descrição do Produto: " />
 			<h:outputText value="#{produtoManagedBean.descricao}" /><br/>
-			<h:commandButton value="Incluir" action="#{produtoManagedBean.incluiProduto}"/>
+			<h:commandButton value="Atualiza" action="#{produtoManagedBean.atualiza}"/>&nbsp;
 		</h:form>
 	</f:view>
 </h:body>  
