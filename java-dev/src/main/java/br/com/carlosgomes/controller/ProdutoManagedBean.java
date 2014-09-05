@@ -1,27 +1,22 @@
 package br.com.carlosgomes.controller;
 
+import java.util.List;
+
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.RequestScoped;
+import javax.faces.bean.ViewScoped;
+
 import br.com.carlosgomes.dao.ProdutoDAO;
 import br.com.carlosgomes.modelo.Produto;
 
 @ManagedBean
-@RequestScoped
+@ViewScoped
 public class ProdutoManagedBean {
 	
-	public String getDescricao() {
-		return new ProdutoDAO().busca(20).getDescricao();
-	}
-
-	public void atualiza() {
-		ProdutoDAO produtoDAO = new ProdutoDAO();
-		produtoDAO.beginTransaction();
-
-		Produto produto = produtoDAO.busca(20);
-		produto.setDescricao("CCC");
-		
-		produtoDAO.salva(produto);
-		produtoDAO.commit();
-	}
+	private ProdutoDAO produtoDAO = new ProdutoDAO();
 	
+	public List<Produto> getProdutos() {
+		List<Produto> produtos = produtoDAO.busca();
+		return produtos;
+	}
+
 }
