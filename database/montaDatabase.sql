@@ -6,7 +6,7 @@ create table javadev.produtos (
 	codigo int(10) not null auto_increment,
 	descricao varchar(50),
 	primary key (codigo),
-	index produtos_ndx01 (descricao)
+	unique index produtos_ndx01 (descricao)
 );
 
 # Cria tabela de Tabelas de Preço
