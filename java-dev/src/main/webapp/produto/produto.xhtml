@@ -3,15 +3,17 @@
 <html lang="en"
     xmlns="http://www.w3.org/1999/xhtml"
     xmlns:f="http://java.sun.com/jsf/core"
-    xmlns:h="http://java.sun.com/jsf/html">
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:p="http://primefaces.org/ui">
 
 <h:body>
-	<f:view>
-		<h:form id="frm">
-			<h:outputText value="Descrição do Produto: " />
-			<h:outputText value="#{produtoManagedBean.descricao}" /><br/>
-			<h:commandButton value="Atualiza" action="#{produtoManagedBean.atualiza}"/>&nbsp;
-		</h:form>
-	</f:view>
+			<p:dataTable var="produto" value="#{produtoManagedBean.produtos}">
+	    		<p:column headerText="Código">
+        			<h:outputText value="#{produto.codigo}" />
+    			</p:column>
+	    		<p:column headerText="Descrição">
+        			<h:outputText value="#{produto.descricao}" />
+    			</p:column>
+			</p:dataTable>
 </h:body>  
 </html>
