@@ -1,0 +1,13 @@
+* +html .login-page {
+	height:auto;
+	margin-top: expression(this.parentNode.offsetHeight > this.offsetHeight ? ((this.parentNode.offsetHeight-this.offsetHeight)/2 + "px") : "0");
+}
+.login-form .heading {filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2b98d9', endColorstr='#0652aa',GradientType=0 );}
+.login-form .row-holder {filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e3e3e3',GradientType=0 );}
+.login-form input[type=submit] {background: #0652aa;}
+#header {filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2a95d8', endColorstr='#0857ad',GradientType=0 );}
+.bar {filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e8e8e8',GradientType=0 );}
+.accordion .opener {filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4ca7dd', endColorstr='#2b6d9c',GradientType=0 );}
+.accordion ul li {filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffdfbf', endColorstr='#f1efe0',GradientType=0 );}
+.c1 {background:#fff;}
+.c2 .heading {filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f6f6f6', endColorstr='#dddddd',GradientType=0 );}

@@ -1,3 +1,5 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
 <html lang="en"
     xmlns="http://www.w3.org/1999/xhtml"
     xmlns:ui="http://java.sun.com/jsf/facelets"
@@ -6,19 +8,39 @@
     xmlns:p="http://primefaces.org/ui">
 
 <h:head>
-
+	<h:outputText escape="false" value="#{layout.header}" />
 </h:head>
 
 <h:body>
 	<f:view>
-		<p:dataTable var="produto" value="#{produtoManagedBean.produtos}">
-	  		<p:column headerText="Código">
-	   			<h:outputText value="#{produto.codigo}" />
-			</p:column>
-	  		<p:column headerText="Descrição">
-	   			<h:outputText value="#{produto.descricao}" />
-			</p:column>
-		</p:dataTable>
+		<h:outputText escape="false" value="#{layout.pageHeader}" />
+		<h:form name="main-menu">
+			<p:growl id="messages"/>
+			<p:menubar>
+		        <p:submenu label="&nbsp;Produto" icon="ui-icon-home">
+		            <p:menuitem value="&nbsp;Novo" icon="ui-icon-document" />
+		            <p:menuitem value="&nbsp;Consultar" icon="ui-icon-note" url="../produto/produto.xhtml" />
+		        </p:submenu>
+		        <p:menuitem value="&nbsp;Sair" icon="ui-icon-power" />
+		        <f:facet name="options">
+		        	<p:outputLabel value="Carlos Gomes&nbsp;&nbsp;" />
+		            <p:commandButton type="button" value="Sair" icon="ui-icon-power" />
+		        </f:facet>
+		    </p:menubar>
+		</h:form>
+
+		<div class="body">
+			<p:dataTable var="produto" value="#{produtoManagedBean.produtos}">
+		  		<p:column headerText="Código">
+		   			<h:outputText value="#{produto.codigo}" />
+				</p:column>
+		  		<p:column headerText="Descrição">
+		   			<h:outputText value="#{produto.descricao}" />
+				</p:column>
+			</p:dataTable>
+		</div>
+		
+		<span><h:outputText escape="false" value="#{layout.footer}" /></span>
 	</f:view>
 </h:body>  
 </html>
