@@ -37,3 +37,12 @@ Desenvolvimento Java
 <h4>Configuração do JSF</h4>
 . Adicionei dependências no pom.xml para o JSF;<br/>
 . Configurei o web.xml para mapear o JSF.<br/>
+
+<h4>Criação de uma página xhtml com JSF, PrimeFaces e templates em Velocity</h4>
+. Adicionei dependências no pom.xml para o Velocity;<br/>
+. Criei a classe Layout para utilização dos templates em velocity;<br/>
+. Criei uma página em xhtml, configurando utilizando templates como cabeçalho e rodapé;<br/>
+. Adicionei dependências no pom.xml para o PrimeFaces;<br/>
+. Adicionei um menubar;<br/>
+. Criei um método para buscar uma lista de produtos no ProdutoManagedBean;<br/>
+. Adicionei um dataTable.<br/>
