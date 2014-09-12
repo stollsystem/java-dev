@@ -1,10 +1,4 @@
 		<div class="header">
-			<div class="system-title">Java Development</div>
+			<div class="system-title">java-dev</div>
 			<div class="logo-app"></div>
-			<div class="menu-bar">
-				<div class="user-profile">
-					<div class="arrow"></div>
-					<div class="name">Carlos Gomes</div>
-				</div>
-			</div>
 		</div>

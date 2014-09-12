@@ -1,0 +1,22 @@
+<ui:composition 
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:p="http://primefaces.org/ui">
+    
+		<h:form name="main-menu">
+			<p:menubar>
+		        <p:submenu label="&#160;Produto" icon="ui-icon-home">
+		            <p:menuitem value="&#160;Novo" icon="ui-icon-document" url="../produto/produto-inclusao.xhtml" />
+		            <p:menuitem value="&#160;Consultar" icon="ui-icon-search" url="../produto/produto.xhtml" />
+		        </p:submenu>
+		        <p:menuitem value="&#160;Sair" icon="ui-icon-power" />
+		        <f:facet name="options">
+		        	<p:outputLabel value="Carlos Gomes&#160;&#160;" />
+		            <p:commandButton type="button" value="Sair" icon="ui-icon-power" />
+		        </f:facet>
+		    </p:menubar>
+		</h:form>
+
+</ui:composition>

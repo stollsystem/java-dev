@@ -14,20 +14,7 @@
 <h:body>
 	<f:view>
 		<h:outputText escape="false" value="#{layout.pageHeader}" />
-		<h:form name="main-menu">
-			<p:growl id="messages"/>
-			<p:menubar>
-		        <p:submenu label="&nbsp;Produto" icon="ui-icon-home">
-		            <p:menuitem value="&nbsp;Novo" icon="ui-icon-document" />
-		            <p:menuitem value="&nbsp;Consultar" icon="ui-icon-note" url="../produto/produto.xhtml" />
-		        </p:submenu>
-		        <p:menuitem value="&nbsp;Sair" icon="ui-icon-power" />
-		        <f:facet name="options">
-		        	<p:outputLabel value="Carlos Gomes&nbsp;&nbsp;" />
-		            <p:commandButton type="button" value="Sair" icon="ui-icon-power" />
-		        </f:facet>
-		    </p:menubar>
-		</h:form>
+		<ui:include src="../menu/main-menu.xhtml" />
 
 		<div class="body">
 			<p:dataTable var="produto" value="#{produtoManagedBean.produtos}">
