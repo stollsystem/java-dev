@@ -5,6 +5,7 @@ import java.lang.reflect.ParameterizedType;
 import java.util.List;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
+import org.hibernate.criterion.Restrictions;
 import br.com.carlosgomes.util.HibernateUtil;
 
 @SuppressWarnings("unchecked")
@@ -18,6 +19,12 @@ public class GenericDAO<T, I> implements DAO<T, I> {
 
 	public List<T> busca() {
 		Criteria criteria = this.session.createCriteria(this.getClazz());
+		return (List<T>) criteria.list();
+	}
+
+	public List<T> busca(String propriedade, String valor) {
+		Criteria criteria = this.session.createCriteria(this.getClazz());
+		criteria.add(Restrictions.eq(propriedade, valor));
 		return (List<T>) criteria.list();
 	}
 

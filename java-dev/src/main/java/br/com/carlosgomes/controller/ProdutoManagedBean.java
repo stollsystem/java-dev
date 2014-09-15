@@ -23,11 +23,16 @@ public class ProdutoManagedBean {
 	}
 	
 	public void salva() {
-		produtoDAO.beginTransaction();
-		produtoDAO.salva(produto);
-		produtoDAO.commit();
+		List<Produto> produtos = produtoDAO.busca("descricao", produto.getDescricao().trim());
 		
-		FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, null, "Produto cadastrado com sucesso!"));
+		if (produtos.size() == 0) {
+			produtoDAO.beginTransaction();
+			produtoDAO.salva(produto);
+			produtoDAO.commit();
+			FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, null, "Produto cadastrado com sucesso!"));
+		} else {
+			FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, null, "Já existe um produto cadastrado com essa descrição."));			
+		}
 	}
 
 	public Produto getProduto() {
