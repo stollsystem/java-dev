@@ -5,6 +5,7 @@ create schema javadev;
 create table javadev.produtos (
 	codigo int(10) not null auto_increment,
 	descricao varchar(50),
+	status varchar(1),
 	primary key (codigo),
 	unique index produtos_ndx01 (descricao)
 );

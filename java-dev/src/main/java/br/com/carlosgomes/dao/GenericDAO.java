@@ -47,6 +47,7 @@ public class GenericDAO<T, I> implements DAO<T, I> {
 	
 	public void commit() {
 		session.getTransaction().commit();
+		session.flush();
 	}
 	
 	public void rollback() {

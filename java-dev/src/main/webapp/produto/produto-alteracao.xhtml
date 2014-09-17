@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html lang="en"
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<h:outputText escape="false" value="#{layout.header}" />
+</h:head>
+
+<h:body>
+	<f:view>
+		<h:outputText escape="false" value="#{layout.pageHeader}" />
+		<ui:include src="../menu/main-menu.xhtml" />
+
+		<div class="body">
+			<h:form name="frm">
+				<p:panel id="panel" header="Alteração de Produto">
+					<p:focus for="descricao" />
+					<p:messages autoUpdate="true" globalOnly="true" showDetail="true" showSummary="false" closable="true" />
+										
+					<h:panelGrid id="grid" columns="3" cellpadding="5">
+						<p:outputLabel for="descricao" value="Descrição:" />
+						<p:inputText id="descricao" value="#{produtoManagedBean.produto.descricao}" size="50" maxlength="50" validatorMessage="O campo 'Descrição' deve ser preenchido.">
+							<f:validateRequired/>
+						</p:inputText>
+						<p:message for="descricao" />
+						
+				        <p:outputLabel for="status" value="Status:" />
+				        <p:selectOneMenu id="status" value="#{produtoManagedBean.produto.status}">
+				            <f:selectItem itemLabel="Ativo" itemValue="A" />
+				            <f:selectItem itemLabel="Cancelado" itemValue="C" />
+				        </p:selectOneMenu>						
+					</h:panelGrid>
+					<br/>
+
+					<p:commandButton value="Voltar" icon="ui-icon-arrowreturnthick-1-w" immediate="true" action="../produto/produto.xhtml" />
+					<p:commandButton value="Alterar" icon="ui-icon-check" update="grid" actionListener="#{produtoManagedBean.altera}" />
+				</p:panel>
+			</h:form>
+		</div>
+		
+		<span><h:outputText escape="false" value="#{layout.footer}" /></span>
+	</f:view>
+</h:body>  
+</html>

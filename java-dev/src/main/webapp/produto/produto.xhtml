@@ -17,14 +17,41 @@
 		<ui:include src="../menu/main-menu.xhtml" />
 
 		<div class="body">
-			<p:dataTable var="produto" value="#{produtoManagedBean.produtos}">
-		  		<p:column headerText="Código">
-		   			<h:outputText value="#{produto.codigo}" />
-				</p:column>
-		  		<p:column headerText="Descrição">
-		   			<h:outputText value="#{produto.descricao}" />
-				</p:column>
-			</p:dataTable>
+
+			<h:form name="frm">
+				
+			    <p:growl id="mensagem" autoUpdate="true" showDetail="true" showSummary="false" />  
+				
+				<p:confirmDialog global="true" showEffect="fade" hideEffect="fade">
+					<div class="align-center">
+						<p:spacer width="10px" />	
+		        		<p:commandButton value="Sim" type="button" styleClass="ui-confirmdialog-yes" icon="ui-icon-check" />
+		        		<p:commandButton value="Não" type="button" styleClass="ui-confirmdialog-no" icon="ui-icon-close" />
+	        		</div>
+	    		</p:confirmDialog>
+
+				<p:dataTable var="produto" value="#{produtoManagedBean.produtos}" stickyHeader="true">
+			  		<p:column headerText="Código">
+			   			<h:outputText value="#{produto.codigo}" />
+					</p:column>
+			  		
+			  		<p:column headerText="Descrição">
+			   			<h:outputText value="#{produto.descricao}" />
+					</p:column>
+
+			  		<p:column headerText="Status">
+			   			<h:outputText value="#{produto.status}" />
+					</p:column>
+					
+					<p:column style="width:20px">
+	                    <p:commandButton icon="ui-icon-pencil" style="width:20px; height:20px" action="#{produtoManagedBean.alteracao}">
+	                    	<f:setPropertyActionListener target="#{produtoManagedBean.produto}" value="#{produto}" />
+	                    </p:commandButton>
+	                </p:column>
+				</p:dataTable>
+				
+	    	</h:form>
+		
 		</div>
 		
 		<span><h:outputText escape="false" value="#{layout.footer}" /></span>
