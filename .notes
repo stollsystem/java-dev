@@ -1,3 +1,4 @@
 . GitHub - trabalhar com outras branchs e forks;
 . Melhor forma de estruturar o projeto;
-. Tive que mapear as entidades no persistence.xml.
+. Tive que mapear as entidades no persistence.xml;
+. Classe Pedido e PedidoItem (padrão de nomes).
